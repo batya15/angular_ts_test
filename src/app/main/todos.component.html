@@ -1,0 +1,23 @@
+<div class="todoApp">
+    <header>
+        Todos
+    </header>
+    <div class="form">
+        <div class="input">
+            <mdl-text-field label="Enter caption new task..." ng-model="first_name"></mdl-text-field>
+        </div>
+        <mdl-button-raised class="btn" theme="primary" ng-click="$ctrl.add()">Add task</mdl-button-raised>
+    </div>
+    <div class="filters">
+        <mdl-radio class="filter" label="All" value="All" ng-model="gender"></mdl-radio>
+        <mdl-radio class="filter" label="Active" value="Active" ng-model="gender"></mdl-radio>
+        <mdl-radio class="filter" label="Complite" value="Complite" ng-model="gender"></mdl-radio>
+    </div>
+    <div class="list">
+        <item-todo  data="item" ng-repeat="item in $ctrl.todos"></item-todo>
+    </div>
+    <footer>
+        <div class="counter">1 item left</div>
+        <mdl-button-raised class="cleaner">Clean complite</mdl-button-raised>
+    </footer>
+</div>

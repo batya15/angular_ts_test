@@ -1,0 +1,83 @@
+.todoApp {
+  margin: 2rem auto;
+  width: 30rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  background: #f5f5f5;
+  padding: 1rem;
+
+  header {
+    text-align: center;
+    line-height: 5rem;
+    font-size: 3rem;
+    color: burlywood;
+  }
+
+  .form {
+      &:after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+
+      .input {
+        float: left;
+
+      }
+      .btn {
+        float: right;
+        margin-top: 1rem;
+      }
+  }
+
+  .filters {
+    text-align: center;
+    .filter {
+      margin: 0 2rem;
+      display: inline-block;
+    }
+  }
+
+  footer {
+    margin-top: 2rem;
+
+    &:after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+
+    .cleaner {
+      float: right;
+    }
+
+    .counter {
+      float: left;
+    }
+  }
+  
+  .todo {
+    line-height: 3rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #dddddd;
+
+    .checkbox {
+      float: left;
+    }
+    .caption {
+      font-size: 1.5rem;
+      margin-left: 2rem;
+    }
+
+    &:hover {
+      .delete {
+        opacity: 1;
+      }
+    }
+
+    .delete {
+      opacity: 0;
+      transition: opacity 0.3s;
+      float: right;
+    }
+  }
+}

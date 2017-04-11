@@ -1,23 +1,16 @@
-///<reference path="module.ts"/>
+///<reference path="app/todos.module.ts"/>
+///<reference path="app/main/todos.component.ts"/>
 
 namespace Main {
-    let s: string = " 2string";
 
-    console.log(Test.test + s);
+    export const DI_MODULE_NAME = "main.module";
 
-    let module = angular.module("mySuperAwesomeApp", ['angularCSS', 'mdl']);
-
-    module.component("heros", {
-        templateUrl: "template.html",
-        css: 'style.css',
-        controller: function herosController() {},
-        controllerAs: "$ctrl"
-    });
+    angular.module(Main.DI_MODULE_NAME, [TodosModule.DI_MODULE_NAME]);
 
     angular
         .element(document)
         .ready( () => {
-            angular.bootstrap(document, ["mySuperAwesomeApp"]);
+            angular.bootstrap(document, [Main.DI_MODULE_NAME]);
         });
 
 }

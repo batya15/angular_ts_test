@@ -4,6 +4,7 @@ var connect = require('gulp-connect');
 var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass');
 var historyApiFallback = require('connect-history-api-fallback');
+var embedTemplates = require('gulp-angular-embed-templates');
 
 gulp.task('default', ['watch']);
 
@@ -26,7 +27,8 @@ gulp.task('server', function () {
 });
 
 gulp.task('scripts', function() {
-    return gulp.src('./src/**/*.ts')
+    return gulp.src('./src/main.ts')
+    // .pipe(embedTemplates({sourceType:'ts'})) //todo: independent component
         .pipe(sourcemaps.init({largeFile: true}))
         .pipe(ts({
             module :"amd",
